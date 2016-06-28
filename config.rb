@@ -29,6 +29,15 @@ page '/*.txt', layout: false
 #   end
 # end
 
+#External Pipeline for JavaScript
+activate :external_pipeline,
+  name: :gulp,
+  command: "gulp #{build? ? 'build' : ''}",
+  source: ".tmp",
+  latency: 1
+
+ignore "source/javascripts/source/*"
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
