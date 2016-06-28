@@ -45,4 +45,7 @@ configure :build do
 
   # Minify Javascript on build
   activate :minify_javascript
+
+  #Hash the assets in build
+  activate :asset_hash
 end
